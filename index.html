@@ -129,7 +129,7 @@
             let fizz = Number(document.getElementById("txtFizzBuzzIn1").value);
             let buzz = Number(document.getElementById("txtFizzBuzzIn2").value);
             //Step 2 Run data thru function
-            let output = FizzBuzzBase(fizz, buzz);
+            let output = fizzBuzzBase(fizz, buzz);
 
             //Step 3 My result output
             document.getElementById("pFizzBuzzOut").innerHTML = output;
@@ -138,7 +138,7 @@
         });
 
         //My Named Function
-        function FizzBuzzBase(fizz, buzz) {
+        function fizzBuzzBase(fizz, buzz) {
             let output = "";
 
             for (let loop = 1; loop <= 100; loop++) {
