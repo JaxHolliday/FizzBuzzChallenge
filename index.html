@@ -10,10 +10,49 @@
 
     <title>FizzBuzz Challenge</title>
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon-16x16.png">
+    <link rel="manifest" href="/Images/site.webmanifest">
+
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/prism.css" rel="stylesheet" />
 
+    <style>
+        body {
+            color: black;
+            text-align: center;
+            background-color: steelblue;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+        }
+
+        h3 {
+            color: black;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+
+        span {
+            font-size: 500%
+        }        
+    </style>
 </head>
 
 <body>
@@ -51,20 +90,80 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-                <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-                <ul class="list-unstyled">
-                    <li>Bootstrap 4.5.0</li>
-                    <li>jQuery 3.5.1</li>
-                </ul>
+                <h1 class="mt-5">Would you like to have a drink of FizzBuzz?</h1>
+                <p class="lead"><h3>FizzBuzz was invented by Imran Ghory, and popularized by Jeff Atwood.</h3></p> 
+                <p><h4>Write a program that prints the numbers from 1 to 100.</h4></p>
             </div>
         </div>
     </div>
+    <hr />
+
+    <!-- FizzBuzz Text Area -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <input id="txtFizzBuzzIn1" type=""
+            </div>
+            <div class="col">
+                <input id="txtFizzBuzzIn2" />
+            </div>
+            <div class="col">
+                <button id="btnFizzBuzz" class="btn btn-danger">Have a swig!</button>
+            </div>
+        </div>
+        <div class="row">
+            <p id="VoteOut"></p>
+        </div>
+    </div>
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="Scripts/jquery.slim.min.js"></script>
     <script src="Scripts/bootstrap.bundle.min.js"></script>
     <script src="Scripts/prism.js"></script>
+
+    <!-- My Personal JS Script -->
+    <script>
+        //Make event for btn click event
+        document.getElementById("btnFizzBuzz").addEventListener("click", function () {
+            //Step 1: Get the user data, if any
+            let fizz = Number(document.getElementById("txtFizzBuzzIn1").value);
+            let buzz = Number(document.getElementById("txtFizzBuzzIn2").value);
+            //Step 2: Run the user data thru named function
+            let output = FizzBuzzBase(fizz, buzz)
+
+            //Step 3: Results of my FizzBuzz function
+            document.getElementById("pVoteout").innerHTML = output;
+
+
+
+        });
+
+        //My FizzBuzz Solution
+        function FizzBuzzBase(fizz, buzz){
+            let output = "";
+            for (let i = 1; i <= 100; i++) {
+                if (i % fizz == 0 && i % buzz == 0) {
+                    output += "FizzBuzz ";
+                }
+                else if (i % fizz == 0) {
+                    output += "Fizz ";
+                }
+                else if (i % buzz == 0) {
+                    output += "Buzz ";
+                }
+                else {
+                    output + - i + " ";
+                }
+            }
+            return output:
+        }
+
+
+
+
+    </script>
 </body>
 
 </html>
