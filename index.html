@@ -14,45 +14,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/Images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon-16x16.png">
-    <link rel="manifest" href="/Images/site.webmanifest">
+    
 
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/prism.css" rel="stylesheet" />
-
-    <style>
-        body {
-            color: black;
-            text-align: center;
-            background-color: steelblue;
-        }
-
-        h1 {
-            color: black;
-            text-align: center;
-        }
-
-        h2 {
-            color: black;
-            text-align: center;
-        }
-
-        h3 {
-            color: black;
-            text-align: center;
-        }
-
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 30%;
-        }
-
-        span {
-            font-size: 100%
-        }        
-    </style>
+    <link href="/CSS/Sitestyle.css" rel="stylesheet" />
+    
 </head>
 
 <body>
@@ -91,7 +59,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Would you like to have a drink of FizzBuzz?</h1>
-                <p class="lead"><h3>FizzBuzz was invented by Imran Ghory, and popularized by Jeff Atwood.</h3></p> 
+                <p class="lead"><h3>FizzBuzz was invented by Imran Ghory, and popularized by Jeff Atwood.</h3></p>
                 <p><h4></h4></p>
             </div>
         </div>
@@ -102,15 +70,19 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <input id="txtFizzBuzzIn1" type="text" value="3"/>
+                <input id="txtFizzBuzzIn1" type="text" value="3" />
             </div>
             <div class="col">
-                <input id="txtFizzBuzzIn2" type="text" value="5"/>
+                <input id="txtFizzBuzzIn2" type="text" value="5" />
             </div>
             <div class="col"><button type="button" id="btnFB" class="btn btn-danger">Bruh</button></div>
         </div>
-        <div class="row">            
-            <p id="pFizzBuzzOut"></p>
+        <div class="row">
+            <div class="col">
+                <table class="table table-dark table-striped" id="pFizzBuzzOut"> 
+                    <!-- Output will go Here! -->
+                </table>
+            </div>            
         </div>
     </div>
 
@@ -122,42 +94,19 @@
     <script src="Scripts/prism.js"></script>
 
     <!-- My Personal JS Script -->
+    <script src="/JS/Bobby!.js"></script>
+
     <script>
         // Wire up event handler for click event
-        document.getElementById("btnFB").addEventListener("click", function () {
-            //Step 1 Get Data
-            let fizz = Number(document.getElementById("txtFizzBuzzIn1").value);
-            let buzz = Number(document.getElementById("txtFizzBuzzIn2").value);
-            //Step 2 Run data thru function
-            let output = fizzBuzzBase(fizz, buzz);
-
-            //Step 3 My result output
-            document.getElementById("pFizzBuzzOut").innerHTML = output;
-
-
-        });
-
-        //My Named Function
-        function fizzBuzzBase(fizz, buzz) {
-            let output = "";
-
-            for (let loop = 1; loop <= 100; loop++) {
-                output += `${loop}, `;
-            }
-            return output;
-        }
-            
-            
-
-
+        document.getElementById("btnFB").addEventListener("click", fizzBuzzDirect)
     </script>
-
-        
-
-
-
-
     
+
+
+
+
+
+
 </body>
 
 </html>
