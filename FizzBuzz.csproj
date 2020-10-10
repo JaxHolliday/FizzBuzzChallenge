@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Poppin%27 Summer Blowout.png" />
     <Content Include="JS\Bobby!.js" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\prism.css" />
