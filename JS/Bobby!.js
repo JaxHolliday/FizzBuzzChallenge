@@ -42,3 +42,13 @@ function renderTemplate(num, output) {              //Function for adding to a t
     return template; 
 
 }
+
+// function prevents input of all letters into input field
+function isNumber(evt) {                                     //parameter of event
+    evt = (evt) ? evt : window.event;                        //evt variable = event of the key press
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+};
